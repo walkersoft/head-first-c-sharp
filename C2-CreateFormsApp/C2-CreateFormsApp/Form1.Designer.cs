@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.changeText = new System.Windows.Forms.Button();
             this.enableCheckbox = new System.Windows.Forms.CheckBox();
             this.labelToChange = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.newButton5 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // changeText
@@ -61,16 +65,37 @@
             this.labelToChange.Text = "Push the button to change my text";
             this.labelToChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(139, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(197, 123);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // newButton5
+            // 
+            this.newButton5.Location = new System.Drawing.Point(0, 0);
+            this.newButton5.Name = "newButton5";
+            this.newButton5.Size = new System.Drawing.Size(487, 291);
+            this.newButton5.TabIndex = 4;
+            this.newButton5.Text = "newButton5";
+            this.newButton5.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 92);
+            this.ClientSize = new System.Drawing.Size(484, 288);
+            this.Controls.Add(this.newButton5);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelToChange);
             this.Controls.Add(this.enableCheckbox);
             this.Controls.Add(this.changeText);
             this.Name = "Form1";
             this.Text = "C2 - Rebuilding With Forms";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,6 +106,8 @@
         private System.Windows.Forms.Button changeText;
         private System.Windows.Forms.CheckBox enableCheckbox;
         private System.Windows.Forms.Label labelToChange;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button newButton5;
     }
 }
 
