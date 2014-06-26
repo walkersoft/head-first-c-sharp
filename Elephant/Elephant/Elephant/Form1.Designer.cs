@@ -31,6 +31,7 @@
             this.lucindaButton = new System.Windows.Forms.Button();
             this.lloydButton = new System.Windows.Forms.Button();
             this.swapButton = new System.Windows.Forms.Button();
+            this.elephantButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lucindaButton
@@ -63,11 +64,22 @@
             this.swapButton.UseVisualStyleBackColor = true;
             this.swapButton.Click += new System.EventHandler(this.swapButton_Click);
             // 
+            // elephantButton
+            // 
+            this.elephantButton.Location = new System.Drawing.Point(48, 109);
+            this.elephantButton.Name = "elephantButton";
+            this.elephantButton.Size = new System.Drawing.Size(75, 23);
+            this.elephantButton.TabIndex = 3;
+            this.elephantButton.Text = "Elephant";
+            this.elephantButton.UseVisualStyleBackColor = true;
+            this.elephantButton.Click += new System.EventHandler(this.elephantButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(191, 137);
+            this.ClientSize = new System.Drawing.Size(167, 149);
+            this.Controls.Add(this.elephantButton);
             this.Controls.Add(this.swapButton);
             this.Controls.Add(this.lloydButton);
             this.Controls.Add(this.lucindaButton);
@@ -82,6 +94,7 @@
         private System.Windows.Forms.Button lucindaButton;
         private System.Windows.Forms.Button lloydButton;
         private System.Windows.Forms.Button swapButton;
+        private System.Windows.Forms.Button elephantButton;
     }
 }
 

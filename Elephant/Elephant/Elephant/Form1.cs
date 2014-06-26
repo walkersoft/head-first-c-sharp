@@ -40,5 +40,14 @@ namespace Elephant
             lloyd = swapper;
             MessageBox.Show("Lucinda and Lloyd have changed identities.", "Elephants Swapped");
         }
+
+        private void elephantButton_Click(object sender, EventArgs e)
+        {
+            lloyd.TalkTo(lucinda, "Hey there!");
+            lloyd.TellMe("Hello!", lucinda);
+            lloyd = lucinda;
+            lloyd.Ears = 3822;
+            lloyd.WhoAmI();
+        }
     }
 }
