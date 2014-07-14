@@ -6,20 +6,13 @@ using System.Threading.Tasks;
 
 namespace DinnerParty__fixed_
 {
-    class BirthdayParty
+    class BirthdayParty : Party
     {
-        public const int CostOfFoodPerPerson = 25;
-
-        public int NumberOfPeople { get; set; }
-
-        public bool FancyDecorations { get; set; }
 
         public string CakeWriting { get; set; }
 
-        public BirthdayParty(int people, bool fancy, string writing)
+        public BirthdayParty(int people, bool fancy, string writing) : base(people, fancy)
         {
-            NumberOfPeople = people;
-            FancyDecorations = fancy;
             CakeWriting = writing;
         }
 
@@ -61,22 +54,11 @@ namespace DinnerParty__fixed_
             }
         }
 
-        private decimal CalculateCostOfDecorations()
-        {
-            decimal cost = 0.0M;
-            if (FancyDecorations)
-                cost = (NumberOfPeople * 15.00M) + 50.00M;
-            else
-                cost = (NumberOfPeople * 7.50M) + 30.00M;
-            return cost;
-        }
-
-        public decimal TotalCost
+        override public decimal Cost
         {
             get
             {
-                decimal cost = CalculateCostOfDecorations();
-                cost += NumberOfPeople * CostOfFoodPerPerson;
+                decimal totalCost = base.Cost;
                 decimal cake = 0.00M;
                 if (CakeSize() == 8)
                 {
@@ -86,8 +68,8 @@ namespace DinnerParty__fixed_
                 {
                     cake = 75.00M + ActualLength * .25M;
                 }
-                cost += cake;
-                return cost;
+                totalCost += cake;
+                return totalCost;
             }
         }
     }

@@ -6,35 +6,13 @@ using System.Threading.Tasks;
 
 namespace DinnerParty__fixed_
 {
-    class DinnerParty
+    class DinnerParty : Party
     {
-        public const int CostOfFoodPerPerson = 25;
-
-        public int NumberOfPeople { get; set; }
-
-        public bool FancyDecorations { get; set; }
-
         public bool HealthyOption { get; set; }
 
-        public DinnerParty(int numberOfPeople, bool healthyOption, bool fancyDecorations)
+        public DinnerParty(int numberOfPeople, bool healthyOption, bool fancyDecorations) : base(numberOfPeople, fancyDecorations)
         {
-            NumberOfPeople = numberOfPeople;
-            FancyDecorations = fancyDecorations;
             HealthyOption = healthyOption;
-        }
-
-        private decimal CalculateCostOfDecorations()
-        {
-            decimal costOfDecorations;
-            if (FancyDecorations)
-            {
-                costOfDecorations = (NumberOfPeople * 15.00M) + 50M;
-            }
-            else
-            {
-                costOfDecorations = (NumberOfPeople * 7.50M) + 30M;
-            }
-            return costOfDecorations;
         }
 
         private decimal CalculateCostOfBeveragesPerPerson()
@@ -51,13 +29,12 @@ namespace DinnerParty__fixed_
             return costOfBeveragesPerPerson;
         }
 
-        public decimal Cost
+        override public decimal Cost
         {
             get
             {
-                decimal totalCost = CalculateCostOfDecorations();
-                totalCost += ((CalculateCostOfBeveragesPerPerson()
-                                      + CostOfFoodPerPerson) * NumberOfPeople);
+                decimal totalCost = base.Cost;
+                totalCost += CalculateCostOfBeveragesPerPerson() * NumberOfPeople;
                 if (HealthyOption)
                 {
                     totalCost *= .95M;

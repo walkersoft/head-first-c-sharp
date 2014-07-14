@@ -70,7 +70,7 @@ namespace DinnerParty__fixed_
         {
             tooLongLabel.Visible = birthdayParty.CakeWritingTooLong;
             decimal cost;
-            cost = birthdayParty.TotalCost;
+            cost = birthdayParty.Cost;
             birthdayCost.Text = cost.ToString("c");
         }
     }
