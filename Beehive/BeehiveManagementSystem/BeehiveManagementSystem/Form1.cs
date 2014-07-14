@@ -21,8 +21,25 @@ namespace BeehiveManagementSystem
             workers[0] = new Worker(new string[] { "Nectar collector", "Honey manufacturing" });
             workers[1] = new Worker(new string[] { "Egg care", "Baby bee tutoring" });
             workers[2] = new Worker(new string[] { "Hive maintenance", "Sting patrol" });
-            workers[3] = new Worker(new string[] { "Nectar collector", "Honey manufactuing", "Egg care", "Baby bee tutoring", "Hive maintenance", "Sting patrol" });
+            workers[3] = new Worker(new string[] { "Nectar collector", "Honey manufacturing", "Egg care", "Baby bee tutoring", "Hive maintenance", "Sting patrol" });
             queen = new Queen(workers);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (queen.AssignWork(workerBeeJob.Text, (int)shifts.Value))
+            {
+                MessageBox.Show("The job " + workerBeeJob.Text + " will be done in " + (int)shifts.Value + " shifts.");
+            }
+            else
+            {
+                MessageBox.Show("There are no bees available to do that job");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            report.Text = queen.WorkTheNextShift();
         }
     }
 }

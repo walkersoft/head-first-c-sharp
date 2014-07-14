@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BeehiveManagementSystem
 {
-    class Worker
+    partial class Worker
     {
         private string[] jobsICanDo;
         private int shiftsWorked;
@@ -18,7 +18,6 @@ namespace BeehiveManagementSystem
             {
                 return shiftsToWork - shiftsWorked;
             }
-            private set;
         }
 
         public Worker(string[] jobs)
