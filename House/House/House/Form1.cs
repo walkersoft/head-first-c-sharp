@@ -12,9 +12,22 @@ namespace House
 {
     public partial class Form1 : Form
     {
+        public Room DiningRoom;
+        public RoomWithDoor LivingRoom;
+        public RoomWithDoor Kitchen;
+        public Outside Garden;
+        public OutsideWithDoor FrontYard;
+        public OutsideWithDoor BackYard;
+
         public Form1()
         {
             InitializeComponent();
+            CreateObjects();
+        }
+
+        public void CreateObjects()
+        {
+
         }
     }
 }
