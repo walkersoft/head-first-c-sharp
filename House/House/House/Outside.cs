@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace House
 {
-    class Outside : Location
+    public class Outside : Location
     {
         private bool hot;
 

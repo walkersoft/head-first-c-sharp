@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace House
 {
-    abstract class Location
+    abstract public class Location
     {
         public string Name { get; set; }
         public Location[] Exits { get; set; }
