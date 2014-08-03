@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace House
@@ -25,12 +26,14 @@ namespace House
         public RoomWithHidingPlace MasterBedroom;
         public RoomWithHidingPlace SecondBedroom;
         public RoomWithHidingPlace UpstairsHallway;
+        public Opponent opponent;
+        public int Moves;
 
         public Form1()
         {
             InitializeComponent();
             CreateObjects();
-            MoveToLocation(LivingRoom);
+            ResetGame();
         }
 
         public void CreateObjects()
@@ -45,14 +48,14 @@ namespace House
             MasterBedroom = new RoomWithHidingPlace("Master Bedroom", "a large bed", "under the large bed");
             SecondBedroom = new RoomWithHidingPlace("Second Bedroom", "a small bed", "under the small bed");
             UpstairsHallway = new RoomWithHidingPlace("Upstairs Hallway", "a picture of a dog", "in the hall closet");
-            Driveway = new OutsideWithHidingPlace("Driveway", false, "the garage");
-            Garden = new OutsideWithHidingPlace("Garden", false, "a shed");
+            Driveway = new OutsideWithHidingPlace("Driveway", false, "in the garage");
+            Garden = new OutsideWithHidingPlace("Garden", false, "in a shed");
 
             DiningRoom.Exits = new Location[2] { LivingRoom, Kitchen };
             Stairs.Exits = new Location[2] { LivingRoom, UpstairsHallway };
             LivingRoom.Exits = new Location[2] { DiningRoom, Stairs };
-            FrontYard.Exits = new Location[2] { Garden, BackYard };
-            BackYard.Exits = new Location[2] { Garden, FrontYard };
+            FrontYard.Exits = new Location[3] { Garden, BackYard, Driveway };
+            BackYard.Exits = new Location[3] { Garden, FrontYard, Driveway };
             Kitchen.Exits = new Location[1] { DiningRoom };
             Bathroom.Exits = new Location[1] { UpstairsHallway };
             MasterBedroom.Exits = new Location[1] { UpstairsHallway };
@@ -68,6 +71,8 @@ namespace House
             BackYard.DoorLocation = Kitchen;
         }
 
+        private bool InGame { get; set; }
+
         private void MoveToLocation(Location location)
         {
             CurrentLocation = location;
@@ -75,30 +80,83 @@ namespace House
             for (int i = 0; i < CurrentLocation.Exits.Length; i++)
                 roomSelect.Items.Add(CurrentLocation.Exits[i].Name);
             roomSelect.SelectedIndex = 0;
-
             roomDescription.Text = CurrentLocation.Description;
+            RedrawForm();
+        }
 
+        private void RedrawForm()
+        {
+            //Show room movement
+            goToRoom.Visible = true;
+            roomSelect.Visible = true;
+
+            //Show or hide door button
             if (CurrentLocation is IHasExteriorDoor)
                 goThroughDoor.Visible = true;
             else
                 goThroughDoor.Visible = false;
+            
+            //Show or hide check button
+            if (CurrentLocation is IHidingPlace)
+                checkButton.Visible = true;
+            else
+                checkButton.Visible = false;
 
-
+            Application.DoEvents();
         }
 
-        private void roomSelect_SelectedIndexChanged(object sender, EventArgs e)
+        private void ResetGame()
         {
+            InGame = false;
+            goThroughDoor.Visible = false;
+            goToRoom.Visible = false;
+            roomSelect.Visible = false;
+            checkButton.Visible = false;
+            hideButton.Visible = true;
+            Moves = 0;
+            opponent = null;
+            opponent = new Opponent(FrontYard);
         }
 
         private void goToRoom_Click(object sender, EventArgs e)
         {
             MoveToLocation(CurrentLocation.Exits[roomSelect.SelectedIndex]);
+            Moves++;
         }
 
         private void goThroughDoor_Click(object sender, EventArgs e)
         {
             IHasExteriorDoor hasDoor = CurrentLocation as IHasExteriorDoor;
             MoveToLocation(hasDoor.DoorLocation);
+            Moves++;
+        }
+
+        private void checkButton_Click(object sender, EventArgs e)
+        {
+            if (opponent.Check(CurrentLocation))
+            {
+                string hidingText = "You found him in " + Moves + " turns!";
+                IHidingPlace hidingPlace = CurrentLocation as IHidingPlace;
+                hidingText += " He was hiding " + hidingPlace.HidingPlace + ".";
+                MessageBox.Show(hidingText);
+                Thread.Sleep(1000);
+                ResetGame();
+            }
+        }
+
+        private void hideButton_Click(object sender, EventArgs e)
+        {
+            InGame = true;
+            for (int i = 10; i != 0; i--)
+            {
+                roomDescription.Text = "Counting down from " + i;
+                opponent.Move();
+                Application.DoEvents();
+                Thread.Sleep(350);
+            }
+            MoveToLocation(LivingRoom);
+            RedrawForm();
+            hideButton.Visible = false;
         }
     }
 }

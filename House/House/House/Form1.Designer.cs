@@ -32,10 +32,13 @@
             this.roomSelect = new System.Windows.Forms.ComboBox();
             this.goToRoom = new System.Windows.Forms.Button();
             this.goThroughDoor = new System.Windows.Forms.Button();
+            this.checkButton = new System.Windows.Forms.Button();
+            this.hideButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // roomDescription
             // 
+            this.roomDescription.Enabled = false;
             this.roomDescription.Location = new System.Drawing.Point(12, 12);
             this.roomDescription.Multiline = true;
             this.roomDescription.Name = "roomDescription";
@@ -57,7 +60,6 @@
             this.roomSelect.Name = "roomSelect";
             this.roomSelect.Size = new System.Drawing.Size(194, 21);
             this.roomSelect.TabIndex = 1;
-            this.roomSelect.SelectedIndexChanged += new System.EventHandler(this.roomSelect_SelectedIndexChanged);
             // 
             // goToRoom
             // 
@@ -79,11 +81,33 @@
             this.goThroughDoor.UseVisualStyleBackColor = true;
             this.goThroughDoor.Click += new System.EventHandler(this.goThroughDoor_Click);
             // 
+            // checkButton
+            // 
+            this.checkButton.Location = new System.Drawing.Point(12, 283);
+            this.checkButton.Name = "checkButton";
+            this.checkButton.Size = new System.Drawing.Size(289, 23);
+            this.checkButton.TabIndex = 4;
+            this.checkButton.Text = "Check!";
+            this.checkButton.UseVisualStyleBackColor = true;
+            this.checkButton.Click += new System.EventHandler(this.checkButton_Click);
+            // 
+            // hideButton
+            // 
+            this.hideButton.Location = new System.Drawing.Point(12, 312);
+            this.hideButton.Name = "hideButton";
+            this.hideButton.Size = new System.Drawing.Size(289, 23);
+            this.hideButton.TabIndex = 5;
+            this.hideButton.Text = "Hide!";
+            this.hideButton.UseVisualStyleBackColor = true;
+            this.hideButton.Click += new System.EventHandler(this.hideButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 287);
+            this.ClientSize = new System.Drawing.Size(313, 345);
+            this.Controls.Add(this.hideButton);
+            this.Controls.Add(this.checkButton);
             this.Controls.Add(this.goThroughDoor);
             this.Controls.Add(this.goToRoom);
             this.Controls.Add(this.roomSelect);
@@ -101,6 +125,8 @@
         private System.Windows.Forms.ComboBox roomSelect;
         private System.Windows.Forms.Button goToRoom;
         private System.Windows.Forms.Button goThroughDoor;
+        private System.Windows.Forms.Button checkButton;
+        private System.Windows.Forms.Button hideButton;
     }
 }
 
