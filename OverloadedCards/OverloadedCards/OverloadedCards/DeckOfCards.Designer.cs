@@ -64,6 +64,7 @@
             this.shuffle2.TabIndex = 2;
             this.shuffle2.Text = "Shuffle Deck #2";
             this.shuffle2.UseVisualStyleBackColor = true;
+            this.shuffle2.Click += new System.EventHandler(this.shuffle2_Click);
             // 
             // shuffle1
             // 
@@ -73,6 +74,7 @@
             this.shuffle1.TabIndex = 3;
             this.shuffle1.Text = "Shuffle Deck #1";
             this.shuffle1.UseVisualStyleBackColor = true;
+            this.shuffle1.Click += new System.EventHandler(this.shuffle1_Click);
             // 
             // reset1
             // 
@@ -82,6 +84,7 @@
             this.reset1.TabIndex = 4;
             this.reset1.Text = "Reset Deck #1";
             this.reset1.UseVisualStyleBackColor = true;
+            this.reset1.Click += new System.EventHandler(this.reset1_Click);
             // 
             // reset2
             // 
@@ -91,6 +94,7 @@
             this.reset2.TabIndex = 5;
             this.reset2.Text = "Reset Deck #2";
             this.reset2.UseVisualStyleBackColor = true;
+            this.reset2.Click += new System.EventHandler(this.reset2_Click);
             // 
             // moveCardLeft
             // 
@@ -100,6 +104,7 @@
             this.moveCardLeft.TabIndex = 6;
             this.moveCardLeft.Text = "<<";
             this.moveCardLeft.UseVisualStyleBackColor = true;
+            this.moveCardLeft.Click += new System.EventHandler(this.moveCardLeft_Click);
             // 
             // moveCardRight
             // 
@@ -109,6 +114,7 @@
             this.moveCardRight.TabIndex = 7;
             this.moveCardRight.Text = ">>";
             this.moveCardRight.UseVisualStyleBackColor = true;
+            this.moveCardRight.Click += new System.EventHandler(this.moveCardRight_Click);
             // 
             // deck1Label
             // 

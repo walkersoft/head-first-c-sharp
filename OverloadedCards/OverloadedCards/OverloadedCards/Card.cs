@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OverloadedCards
 {
-    class Card : IComparable<Card>
+    public class Card : IComparable<Card>
     {
         public Suit Suit;
         public Value Value;

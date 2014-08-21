@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OverloadedCards
 {
-    enum Value
+    public enum Value
     {
         Ace = 1,
         Two = 2,
