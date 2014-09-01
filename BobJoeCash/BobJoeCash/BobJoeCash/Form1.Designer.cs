@@ -35,6 +35,8 @@
             this.receiveCash = new System.Windows.Forms.Button();
             this.joeToBob = new System.Windows.Forms.Button();
             this.bobToJoe = new System.Windows.Forms.Button();
+            this.saveJoe = new System.Windows.Forms.Button();
+            this.loadJoe = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bobCash
@@ -66,9 +68,9 @@
             // 
             // giveCash
             // 
-            this.giveCash.Location = new System.Drawing.Point(42, 156);
+            this.giveCash.Location = new System.Drawing.Point(12, 138);
             this.giveCash.Name = "giveCash";
-            this.giveCash.Size = new System.Drawing.Size(83, 67);
+            this.giveCash.Size = new System.Drawing.Size(83, 40);
             this.giveCash.TabIndex = 6;
             this.giveCash.Text = "Give $10 Cash to Joe";
             this.giveCash.UseVisualStyleBackColor = true;
@@ -76,9 +78,9 @@
             // 
             // receiveCash
             // 
-            this.receiveCash.Location = new System.Drawing.Point(131, 156);
+            this.receiveCash.Location = new System.Drawing.Point(134, 194);
             this.receiveCash.Name = "receiveCash";
-            this.receiveCash.Size = new System.Drawing.Size(84, 67);
+            this.receiveCash.Size = new System.Drawing.Size(84, 40);
             this.receiveCash.TabIndex = 7;
             this.receiveCash.Text = "Receive $5 Cash from Bob";
             this.receiveCash.UseVisualStyleBackColor = true;
@@ -86,9 +88,9 @@
             // 
             // joeToBob
             // 
-            this.joeToBob.Location = new System.Drawing.Point(42, 229);
+            this.joeToBob.Location = new System.Drawing.Point(12, 194);
             this.joeToBob.Name = "joeToBob";
-            this.joeToBob.Size = new System.Drawing.Size(83, 67);
+            this.joeToBob.Size = new System.Drawing.Size(83, 40);
             this.joeToBob.TabIndex = 8;
             this.joeToBob.Text = "Joe Gives $10 to Bob";
             this.joeToBob.UseVisualStyleBackColor = true;
@@ -96,19 +98,41 @@
             // 
             // bobToJoe
             // 
-            this.bobToJoe.Location = new System.Drawing.Point(131, 229);
+            this.bobToJoe.Location = new System.Drawing.Point(134, 138);
             this.bobToJoe.Name = "bobToJoe";
-            this.bobToJoe.Size = new System.Drawing.Size(84, 67);
+            this.bobToJoe.Size = new System.Drawing.Size(84, 40);
             this.bobToJoe.TabIndex = 9;
             this.bobToJoe.Text = "Bob Gives $5 to Joe";
             this.bobToJoe.UseVisualStyleBackColor = true;
             this.bobToJoe.Click += new System.EventHandler(this.bobToJoe_Click);
             // 
+            // saveJoe
+            // 
+            this.saveJoe.Location = new System.Drawing.Point(12, 256);
+            this.saveJoe.Name = "saveJoe";
+            this.saveJoe.Size = new System.Drawing.Size(83, 23);
+            this.saveJoe.TabIndex = 10;
+            this.saveJoe.Text = "Save Joe";
+            this.saveJoe.UseVisualStyleBackColor = true;
+            this.saveJoe.Click += new System.EventHandler(this.saveJoe_Click);
+            // 
+            // loadJoe
+            // 
+            this.loadJoe.Location = new System.Drawing.Point(134, 256);
+            this.loadJoe.Name = "loadJoe";
+            this.loadJoe.Size = new System.Drawing.Size(84, 23);
+            this.loadJoe.TabIndex = 11;
+            this.loadJoe.Text = "Load Joe";
+            this.loadJoe.UseVisualStyleBackColor = true;
+            this.loadJoe.Click += new System.EventHandler(this.loadJoe_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 336);
+            this.ClientSize = new System.Drawing.Size(228, 288);
+            this.Controls.Add(this.loadJoe);
+            this.Controls.Add(this.saveJoe);
             this.Controls.Add(this.bobToJoe);
             this.Controls.Add(this.joeToBob);
             this.Controls.Add(this.receiveCash);
@@ -132,6 +156,8 @@
         private System.Windows.Forms.Button receiveCash;
         private System.Windows.Forms.Button joeToBob;
         private System.Windows.Forms.Button bobToJoe;
+        private System.Windows.Forms.Button saveJoe;
+        private System.Windows.Forms.Button loadJoe;
     }
 }
 
