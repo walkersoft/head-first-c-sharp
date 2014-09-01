@@ -77,12 +77,19 @@ namespace BobJoeCash
 
         private void loadJoe_Click(object sender, EventArgs e)
         {
-            using (Stream input = File.OpenRead("Guy_File.dat"))
+            try
             {
-                BinaryFormatter formatter = new BinaryFormatter();
-                joe = (Guy)formatter.Deserialize(input);
+                using (Stream input = File.OpenRead("Guy_File.dat"))
+                {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    joe = (Guy)formatter.Deserialize(input);
+                }
+                UpdateForm();
             }
-            UpdateForm();
+            catch (FileNotFoundException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
     }
