@@ -26,7 +26,7 @@ namespace GoFish
                 MessageBox.Show("Please enter your name", "Can't start the game yet");
                 return;
             }
-            game = new Game(textName.Text, new List<string> {"Joe", "Bob", "Lily"}, textProgress);
+            game = new Game(textName.Text, new List<string> {"Steve", "Lily"}, textProgress);
             buttonStart.Enabled = false;
             textName.Enabled = false;
             buttonAsk.Enabled = true;
