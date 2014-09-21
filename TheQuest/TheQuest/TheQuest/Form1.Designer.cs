@@ -32,10 +32,10 @@
             this.playerIcon = new System.Windows.Forms.PictureBox();
             this.inventorySlot1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.moveLeft = new System.Windows.Forms.Button();
-            this.moveUp = new System.Windows.Forms.Button();
-            this.moveDown = new System.Windows.Forms.Button();
             this.moveRight = new System.Windows.Forms.Button();
+            this.moveDown = new System.Windows.Forms.Button();
+            this.moveUp = new System.Windows.Forms.Button();
+            this.moveLeft = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.attackRight = new System.Windows.Forms.Button();
             this.attackDown = new System.Windows.Forms.Button();
@@ -95,6 +95,7 @@
             // inventorySlot1
             // 
             this.inventorySlot1.BackColor = System.Drawing.Color.Transparent;
+            this.inventorySlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventorySlot1.Location = new System.Drawing.Point(108, 477);
             this.inventorySlot1.Name = "inventorySlot1";
             this.inventorySlot1.Size = new System.Drawing.Size(75, 75);
@@ -116,23 +117,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Move";
             // 
-            // moveLeft
+            // moveRight
             // 
-            this.moveLeft.Location = new System.Drawing.Point(6, 38);
-            this.moveLeft.Name = "moveLeft";
-            this.moveLeft.Size = new System.Drawing.Size(30, 30);
-            this.moveLeft.TabIndex = 0;
-            this.moveLeft.Text = "←";
-            this.moveLeft.UseVisualStyleBackColor = true;
-            // 
-            // moveUp
-            // 
-            this.moveUp.Location = new System.Drawing.Point(42, 19);
-            this.moveUp.Name = "moveUp";
-            this.moveUp.Size = new System.Drawing.Size(30, 30);
-            this.moveUp.TabIndex = 1;
-            this.moveUp.Text = "↑";
-            this.moveUp.UseVisualStyleBackColor = true;
+            this.moveRight.Location = new System.Drawing.Point(78, 38);
+            this.moveRight.Name = "moveRight";
+            this.moveRight.Size = new System.Drawing.Size(30, 30);
+            this.moveRight.TabIndex = 3;
+            this.moveRight.Text = "→";
+            this.moveRight.UseVisualStyleBackColor = true;
             // 
             // moveDown
             // 
@@ -143,14 +135,23 @@
             this.moveDown.Text = "↓";
             this.moveDown.UseVisualStyleBackColor = true;
             // 
-            // moveRight
+            // moveUp
             // 
-            this.moveRight.Location = new System.Drawing.Point(78, 38);
-            this.moveRight.Name = "moveRight";
-            this.moveRight.Size = new System.Drawing.Size(30, 30);
-            this.moveRight.TabIndex = 3;
-            this.moveRight.Text = "→";
-            this.moveRight.UseVisualStyleBackColor = true;
+            this.moveUp.Location = new System.Drawing.Point(42, 19);
+            this.moveUp.Name = "moveUp";
+            this.moveUp.Size = new System.Drawing.Size(30, 30);
+            this.moveUp.TabIndex = 1;
+            this.moveUp.Text = "↑";
+            this.moveUp.UseVisualStyleBackColor = true;
+            // 
+            // moveLeft
+            // 
+            this.moveLeft.Location = new System.Drawing.Point(6, 38);
+            this.moveLeft.Name = "moveLeft";
+            this.moveLeft.Size = new System.Drawing.Size(30, 30);
+            this.moveLeft.TabIndex = 0;
+            this.moveLeft.Text = "←";
+            this.moveLeft.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -205,6 +206,7 @@
             // inventorySlot2
             // 
             this.inventorySlot2.BackColor = System.Drawing.Color.Transparent;
+            this.inventorySlot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventorySlot2.Location = new System.Drawing.Point(189, 477);
             this.inventorySlot2.Name = "inventorySlot2";
             this.inventorySlot2.Size = new System.Drawing.Size(75, 75);
@@ -215,6 +217,7 @@
             // inventorySlot3
             // 
             this.inventorySlot3.BackColor = System.Drawing.Color.Transparent;
+            this.inventorySlot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventorySlot3.Location = new System.Drawing.Point(271, 477);
             this.inventorySlot3.Name = "inventorySlot3";
             this.inventorySlot3.Size = new System.Drawing.Size(75, 75);
@@ -225,6 +228,7 @@
             // inventorySlot4
             // 
             this.inventorySlot4.BackColor = System.Drawing.Color.Transparent;
+            this.inventorySlot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventorySlot4.Location = new System.Drawing.Point(351, 477);
             this.inventorySlot4.Name = "inventorySlot4";
             this.inventorySlot4.Size = new System.Drawing.Size(75, 75);
@@ -235,6 +239,7 @@
             // inventorySlot5
             // 
             this.inventorySlot5.BackColor = System.Drawing.Color.Transparent;
+            this.inventorySlot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.inventorySlot5.Location = new System.Drawing.Point(432, 477);
             this.inventorySlot5.Name = "inventorySlot5";
             this.inventorySlot5.Size = new System.Drawing.Size(75, 75);
