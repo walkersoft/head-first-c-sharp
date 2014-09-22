@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playerIcon = new System.Windows.Forms.PictureBox();
-            this.inventorySlot1 = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.weaponSword = new System.Windows.Forms.PictureBox();
+            this.moveButtons = new System.Windows.Forms.GroupBox();
             this.moveRight = new System.Windows.Forms.Button();
             this.moveDown = new System.Windows.Forms.Button();
             this.moveUp = new System.Windows.Forms.Button();
             this.moveLeft = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.attackButtons = new System.Windows.Forms.GroupBox();
             this.attackRight = new System.Windows.Forms.Button();
             this.attackDown = new System.Windows.Forms.Button();
             this.attackUp = new System.Windows.Forms.Button();
             this.attackLeft = new System.Windows.Forms.Button();
-            this.inventorySlot2 = new System.Windows.Forms.PictureBox();
-            this.inventorySlot3 = new System.Windows.Forms.PictureBox();
-            this.inventorySlot4 = new System.Windows.Forms.PictureBox();
-            this.inventorySlot5 = new System.Windows.Forms.PictureBox();
+            this.weaponBow = new System.Windows.Forms.PictureBox();
+            this.weaponMace = new System.Windows.Forms.PictureBox();
+            this.weaponBluePotion = new System.Windows.Forms.PictureBox();
+            this.weaponRedPotion = new System.Windows.Forms.PictureBox();
             this.batIcon = new System.Windows.Forms.PictureBox();
             this.ghostIcon = new System.Windows.Forms.PictureBox();
             this.ghoulIcon = new System.Windows.Forms.PictureBox();
@@ -63,13 +63,13 @@
             this.ghoulLabel = new System.Windows.Forms.Label();
             this.ghoulHP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponSword)).BeginInit();
+            this.moveButtons.SuspendLayout();
+            this.attackButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponBow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponMace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponBluePotion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponRedPotion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.batIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghostIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoulIcon)).BeginInit();
@@ -92,30 +92,32 @@
             this.playerIcon.TabStop = false;
             this.playerIcon.Visible = false;
             // 
-            // inventorySlot1
+            // weaponSword
             // 
-            this.inventorySlot1.BackColor = System.Drawing.Color.Transparent;
-            this.inventorySlot1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inventorySlot1.Location = new System.Drawing.Point(108, 477);
-            this.inventorySlot1.Name = "inventorySlot1";
-            this.inventorySlot1.Size = new System.Drawing.Size(75, 75);
-            this.inventorySlot1.TabIndex = 1;
-            this.inventorySlot1.TabStop = false;
-            this.inventorySlot1.Visible = false;
+            this.weaponSword.BackColor = System.Drawing.Color.Transparent;
+            this.weaponSword.BackgroundImage = global::TheQuest.Properties.Resources.sword;
+            this.weaponSword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponSword.Location = new System.Drawing.Point(108, 477);
+            this.weaponSword.Name = "weaponSword";
+            this.weaponSword.Size = new System.Drawing.Size(75, 75);
+            this.weaponSword.TabIndex = 1;
+            this.weaponSword.TabStop = false;
+            this.weaponSword.Visible = false;
+            this.weaponSword.Click += new System.EventHandler(this.weaponSword_Click);
             // 
-            // groupBox1
+            // moveButtons
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.moveRight);
-            this.groupBox1.Controls.Add(this.moveDown);
-            this.groupBox1.Controls.Add(this.moveUp);
-            this.groupBox1.Controls.Add(this.moveLeft);
-            this.groupBox1.Location = new System.Drawing.Point(533, 467);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(115, 93);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Move";
+            this.moveButtons.BackColor = System.Drawing.Color.Transparent;
+            this.moveButtons.Controls.Add(this.moveRight);
+            this.moveButtons.Controls.Add(this.moveDown);
+            this.moveButtons.Controls.Add(this.moveUp);
+            this.moveButtons.Controls.Add(this.moveLeft);
+            this.moveButtons.Location = new System.Drawing.Point(533, 467);
+            this.moveButtons.Name = "moveButtons";
+            this.moveButtons.Size = new System.Drawing.Size(115, 93);
+            this.moveButtons.TabIndex = 2;
+            this.moveButtons.TabStop = false;
+            this.moveButtons.Text = "Move";
             // 
             // moveRight
             // 
@@ -125,6 +127,7 @@
             this.moveRight.TabIndex = 3;
             this.moveRight.Text = "→";
             this.moveRight.UseVisualStyleBackColor = true;
+            this.moveRight.Click += new System.EventHandler(this.moveRight_Click);
             // 
             // moveDown
             // 
@@ -134,6 +137,7 @@
             this.moveDown.TabIndex = 2;
             this.moveDown.Text = "↓";
             this.moveDown.UseVisualStyleBackColor = true;
+            this.moveDown.Click += new System.EventHandler(this.moveDown_Click);
             // 
             // moveUp
             // 
@@ -143,6 +147,7 @@
             this.moveUp.TabIndex = 1;
             this.moveUp.Text = "↑";
             this.moveUp.UseVisualStyleBackColor = true;
+            this.moveUp.Click += new System.EventHandler(this.moveUp_Click);
             // 
             // moveLeft
             // 
@@ -152,20 +157,21 @@
             this.moveLeft.TabIndex = 0;
             this.moveLeft.Text = "←";
             this.moveLeft.UseVisualStyleBackColor = true;
+            this.moveLeft.Click += new System.EventHandler(this.moveLeft_Click);
             // 
-            // groupBox2
+            // attackButtons
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.attackRight);
-            this.groupBox2.Controls.Add(this.attackDown);
-            this.groupBox2.Controls.Add(this.attackUp);
-            this.groupBox2.Controls.Add(this.attackLeft);
-            this.groupBox2.Location = new System.Drawing.Point(671, 467);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(115, 93);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Attack";
+            this.attackButtons.BackColor = System.Drawing.Color.Transparent;
+            this.attackButtons.Controls.Add(this.attackRight);
+            this.attackButtons.Controls.Add(this.attackDown);
+            this.attackButtons.Controls.Add(this.attackUp);
+            this.attackButtons.Controls.Add(this.attackLeft);
+            this.attackButtons.Location = new System.Drawing.Point(671, 467);
+            this.attackButtons.Name = "attackButtons";
+            this.attackButtons.Size = new System.Drawing.Size(115, 93);
+            this.attackButtons.TabIndex = 4;
+            this.attackButtons.TabStop = false;
+            this.attackButtons.Text = "Attack";
             // 
             // attackRight
             // 
@@ -175,6 +181,7 @@
             this.attackRight.TabIndex = 3;
             this.attackRight.Text = "→";
             this.attackRight.UseVisualStyleBackColor = true;
+            this.attackRight.Click += new System.EventHandler(this.attackRight_Click);
             // 
             // attackDown
             // 
@@ -184,6 +191,7 @@
             this.attackDown.TabIndex = 2;
             this.attackDown.Text = "↓";
             this.attackDown.UseVisualStyleBackColor = true;
+            this.attackDown.Click += new System.EventHandler(this.attackDown_Click);
             // 
             // attackUp
             // 
@@ -193,6 +201,7 @@
             this.attackUp.TabIndex = 1;
             this.attackUp.Text = "↑";
             this.attackUp.UseVisualStyleBackColor = true;
+            this.attackUp.Click += new System.EventHandler(this.attackUp_Click);
             // 
             // attackLeft
             // 
@@ -202,50 +211,59 @@
             this.attackLeft.TabIndex = 0;
             this.attackLeft.Text = "←";
             this.attackLeft.UseVisualStyleBackColor = true;
+            this.attackLeft.Click += new System.EventHandler(this.attackLeft_Click);
             // 
-            // inventorySlot2
+            // weaponBow
             // 
-            this.inventorySlot2.BackColor = System.Drawing.Color.Transparent;
-            this.inventorySlot2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inventorySlot2.Location = new System.Drawing.Point(189, 477);
-            this.inventorySlot2.Name = "inventorySlot2";
-            this.inventorySlot2.Size = new System.Drawing.Size(75, 75);
-            this.inventorySlot2.TabIndex = 5;
-            this.inventorySlot2.TabStop = false;
-            this.inventorySlot2.Visible = false;
+            this.weaponBow.BackColor = System.Drawing.Color.Transparent;
+            this.weaponBow.BackgroundImage = global::TheQuest.Properties.Resources.bow;
+            this.weaponBow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponBow.Location = new System.Drawing.Point(189, 477);
+            this.weaponBow.Name = "weaponBow";
+            this.weaponBow.Size = new System.Drawing.Size(75, 75);
+            this.weaponBow.TabIndex = 5;
+            this.weaponBow.TabStop = false;
+            this.weaponBow.Visible = false;
+            this.weaponBow.Click += new System.EventHandler(this.weaponBow_Click);
             // 
-            // inventorySlot3
+            // weaponMace
             // 
-            this.inventorySlot3.BackColor = System.Drawing.Color.Transparent;
-            this.inventorySlot3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inventorySlot3.Location = new System.Drawing.Point(271, 477);
-            this.inventorySlot3.Name = "inventorySlot3";
-            this.inventorySlot3.Size = new System.Drawing.Size(75, 75);
-            this.inventorySlot3.TabIndex = 6;
-            this.inventorySlot3.TabStop = false;
-            this.inventorySlot3.Visible = false;
+            this.weaponMace.BackColor = System.Drawing.Color.Transparent;
+            this.weaponMace.BackgroundImage = global::TheQuest.Properties.Resources.mace;
+            this.weaponMace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponMace.Location = new System.Drawing.Point(271, 477);
+            this.weaponMace.Name = "weaponMace";
+            this.weaponMace.Size = new System.Drawing.Size(75, 75);
+            this.weaponMace.TabIndex = 6;
+            this.weaponMace.TabStop = false;
+            this.weaponMace.Visible = false;
+            this.weaponMace.Click += new System.EventHandler(this.weaponMace_Click);
             // 
-            // inventorySlot4
+            // weaponBluePotion
             // 
-            this.inventorySlot4.BackColor = System.Drawing.Color.Transparent;
-            this.inventorySlot4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inventorySlot4.Location = new System.Drawing.Point(351, 477);
-            this.inventorySlot4.Name = "inventorySlot4";
-            this.inventorySlot4.Size = new System.Drawing.Size(75, 75);
-            this.inventorySlot4.TabIndex = 7;
-            this.inventorySlot4.TabStop = false;
-            this.inventorySlot4.Visible = false;
+            this.weaponBluePotion.BackColor = System.Drawing.Color.Transparent;
+            this.weaponBluePotion.BackgroundImage = global::TheQuest.Properties.Resources.potion_blue;
+            this.weaponBluePotion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponBluePotion.Location = new System.Drawing.Point(351, 477);
+            this.weaponBluePotion.Name = "weaponBluePotion";
+            this.weaponBluePotion.Size = new System.Drawing.Size(75, 75);
+            this.weaponBluePotion.TabIndex = 7;
+            this.weaponBluePotion.TabStop = false;
+            this.weaponBluePotion.Visible = false;
+            this.weaponBluePotion.Click += new System.EventHandler(this.weaponBluePotion_Click);
             // 
-            // inventorySlot5
+            // weaponRedPotion
             // 
-            this.inventorySlot5.BackColor = System.Drawing.Color.Transparent;
-            this.inventorySlot5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.inventorySlot5.Location = new System.Drawing.Point(432, 477);
-            this.inventorySlot5.Name = "inventorySlot5";
-            this.inventorySlot5.Size = new System.Drawing.Size(75, 75);
-            this.inventorySlot5.TabIndex = 8;
-            this.inventorySlot5.TabStop = false;
-            this.inventorySlot5.Visible = false;
+            this.weaponRedPotion.BackColor = System.Drawing.Color.Transparent;
+            this.weaponRedPotion.BackgroundImage = global::TheQuest.Properties.Resources.potion_red;
+            this.weaponRedPotion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.weaponRedPotion.Location = new System.Drawing.Point(432, 477);
+            this.weaponRedPotion.Name = "weaponRedPotion";
+            this.weaponRedPotion.Size = new System.Drawing.Size(75, 75);
+            this.weaponRedPotion.TabIndex = 8;
+            this.weaponRedPotion.TabStop = false;
+            this.weaponRedPotion.Visible = false;
+            this.weaponRedPotion.Click += new System.EventHandler(this.weaponRedPotion_Click);
             // 
             // batIcon
             // 
@@ -447,24 +465,25 @@
             this.Controls.Add(this.ghoulIcon);
             this.Controls.Add(this.ghostIcon);
             this.Controls.Add(this.batIcon);
-            this.Controls.Add(this.inventorySlot5);
-            this.Controls.Add(this.inventorySlot4);
-            this.Controls.Add(this.inventorySlot3);
-            this.Controls.Add(this.inventorySlot2);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.inventorySlot1);
+            this.Controls.Add(this.weaponRedPotion);
+            this.Controls.Add(this.weaponBluePotion);
+            this.Controls.Add(this.weaponMace);
+            this.Controls.Add(this.weaponBow);
+            this.Controls.Add(this.attackButtons);
+            this.Controls.Add(this.moveButtons);
+            this.Controls.Add(this.weaponSword);
             this.Controls.Add(this.playerIcon);
             this.Name = "Form1";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventorySlot5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponSword)).EndInit();
+            this.moveButtons.ResumeLayout(false);
+            this.attackButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.weaponBow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponMace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponBluePotion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weaponRedPotion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.batIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghostIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ghoulIcon)).EndInit();
@@ -482,21 +501,21 @@
         #endregion
 
         private System.Windows.Forms.PictureBox playerIcon;
-        private System.Windows.Forms.PictureBox inventorySlot1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox weaponSword;
+        private System.Windows.Forms.GroupBox moveButtons;
         private System.Windows.Forms.Button moveRight;
         private System.Windows.Forms.Button moveDown;
         private System.Windows.Forms.Button moveUp;
         private System.Windows.Forms.Button moveLeft;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox attackButtons;
         private System.Windows.Forms.Button attackRight;
         private System.Windows.Forms.Button attackDown;
         private System.Windows.Forms.Button attackUp;
         private System.Windows.Forms.Button attackLeft;
-        private System.Windows.Forms.PictureBox inventorySlot2;
-        private System.Windows.Forms.PictureBox inventorySlot3;
-        private System.Windows.Forms.PictureBox inventorySlot4;
-        private System.Windows.Forms.PictureBox inventorySlot5;
+        private System.Windows.Forms.PictureBox weaponBow;
+        private System.Windows.Forms.PictureBox weaponMace;
+        private System.Windows.Forms.PictureBox weaponBluePotion;
+        private System.Windows.Forms.PictureBox weaponRedPotion;
         private System.Windows.Forms.PictureBox batIcon;
         private System.Windows.Forms.PictureBox ghostIcon;
         private System.Windows.Forms.PictureBox ghoulIcon;

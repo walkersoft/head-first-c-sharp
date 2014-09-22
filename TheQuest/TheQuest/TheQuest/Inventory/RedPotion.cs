@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace TheQuest
 {
-    class BluePotion : Weapon, IPotion
+    class RedPotion : Weapon, IPotion
     {
-        private string name = "Blue Potion";
+        public RedPotion(Game game, Point location)
+            : base(game, location)
+        {
+
+        }
+        private string name = "Red Potion";
         private bool used = false;
         public override string Name
         {
@@ -17,7 +23,7 @@ namespace TheQuest
 
         public override void Attack(Direction direction, Random random)
         {
-            game.IncreasePlayerHealth(5, random);
+            game.IncreasePlayerHealth(10, random);
             this.used = true;
         }
 

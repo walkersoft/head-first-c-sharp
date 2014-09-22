@@ -17,7 +17,7 @@ namespace TheQuest
             get
             {
                 List<string> names = new List<string>();
-                foreach (Weapons weapon in inventory)
+                foreach (Weapon weapon in inventory)
                 {
                     names.Add(weapon.Name);
                 }
@@ -61,6 +61,8 @@ namespace TheQuest
             }
         }
 
-        public void Attack(Direction direction, Random random) { }
+        public void Attack(Direction direction, Random random) 
+        { 
+        }
     }
 }

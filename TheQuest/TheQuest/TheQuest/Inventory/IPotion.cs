@@ -8,6 +8,6 @@ namespace TheQuest
 {
     interface IPotion
     {
-        public bool Used { get; private set; }
+        bool Used { get; }
     }
 }

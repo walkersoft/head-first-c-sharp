@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using TheQuest.Weapons;
 
 namespace TheQuest
 {
@@ -78,7 +79,7 @@ namespace TheQuest
                     {
                         new Bat(this, GetRandomLocation(random)),
                     };
-                    WeaponInRoom = new Sword(this, GetRandomLocation);
+                    WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;
 
                 case 2:
