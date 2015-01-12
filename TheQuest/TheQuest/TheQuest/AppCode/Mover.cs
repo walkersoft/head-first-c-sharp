@@ -50,16 +50,16 @@ namespace TheQuest
                     break;
 
                 case Direction.Left:
-                    if (newLocation.Y - MoveInterval >= boundaries.Left)
+                    if (newLocation.X - MoveInterval >= boundaries.Left)
                     {
-                        newLocation.Y -= MoveInterval;
+                        newLocation.X -= MoveInterval;
                     }
                     break;
 
                 case Direction.Right:
-                    if (newLocation.Y + MoveInterval <= boundaries.Right)
+                    if (newLocation.X + MoveInterval <= boundaries.Right)
                     {
-                        newLocation.Y += MoveInterval;
+                        newLocation.X += MoveInterval;
                     }
                     break;
 

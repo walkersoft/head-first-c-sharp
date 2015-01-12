@@ -12,7 +12,7 @@ namespace TheQuest.Weapons
         public Sword(Game game, Point location)
             : base(game, location)
         {
-            radius = 10;
+            radius = 40;
             damage = 3;
         }
         public override string Name

@@ -456,6 +456,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(900, 600);
+            this.Controls.Add(this.playerIcon);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.maceIcon);
             this.Controls.Add(this.bowIcon);
@@ -472,7 +473,7 @@
             this.Controls.Add(this.attackButtons);
             this.Controls.Add(this.moveButtons);
             this.Controls.Add(this.weaponSword);
-            this.Controls.Add(this.playerIcon);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "The Quest";
             this.Load += new System.EventHandler(this.Form1_Load);

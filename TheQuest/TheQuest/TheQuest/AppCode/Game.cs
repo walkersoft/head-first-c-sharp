@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 using TheQuest.Weapons;
 
 namespace TheQuest
@@ -69,7 +70,7 @@ namespace TheQuest
             return new Point(boundaries.Left + random.Next(boundaries.Right / 10 - boundaries.Left / 10) * 10, boundaries.Top + random.Next(boundaries.Bottom / 10 - boundaries.Top / 10) * 10);
         }
 
-        public void NewLevel(Random random)
+        public bool NewLevel(Random random)
         {
             level++;
             switch (level)
@@ -83,23 +84,78 @@ namespace TheQuest
                     break;
 
                 case 2:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Ghost(this, GetRandomLocation(random))
+                    };
+                    WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
                     break;
 
                 case 3:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Ghoul(this, GetRandomLocation(random))
+                    };
+                    WeaponInRoom = new Bow(this, GetRandomLocation(random));
                     break;
 
                 case 4:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Ghost(this, GetRandomLocation(random)),
+                        new Bat(this, GetRandomLocation(random))
+                    };
+                    if (player.Weapons.Contains("Bow"))
+                    {
+                        WeaponInRoom = new BluePotion(this, GetRandomLocation(random));
+                    }
+                    else
+                    {
+                        WeaponInRoom = new Bow(this, GetRandomLocation(random));
+                    }
                     break;
 
                 case 5:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Bat(this, GetRandomLocation(random)),
+                        new Ghoul(this, GetRandomLocation(random))
+                    };
+                    WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
                     break;
 
                 case 6:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Ghost(this, GetRandomLocation(random)),
+                        new Ghoul(this, GetRandomLocation(random))
+                    };
+                    WeaponInRoom = new Mace(this, GetRandomLocation(random));
                     break;
 
                 case 7:
+                    Enemies = new List<Enemy>()
+                    {
+                        new Bat(this, GetRandomLocation(random)),
+                        new Ghost(this, GetRandomLocation(random)),
+                        new Ghoul(this, GetRandomLocation(random))
+                    };
+                    if (player.Weapons.Contains("Mace"))
+                    {
+                        WeaponInRoom = new RedPotion(this, GetRandomLocation(random));
+                    }
+                    else
+                    {
+                        WeaponInRoom = new Mace(this, GetRandomLocation(random));
+                    }
                     break;
+
+                default:
+                    MessageBox.Show("Congrats! You've beaten the game!");
+                    return false; 
+                    
             }
+            return true;
         }
     }
 }

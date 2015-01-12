@@ -21,7 +21,7 @@ namespace TheQuest
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            game = new Game(new Rectangle(120, 90, 540, 180));
+            game = new Game(new Rectangle(120, 90, 640, 230));
             game.NewLevel(random);
             UpdateCharacters();
         }
@@ -183,11 +183,11 @@ namespace TheQuest
             weaponControl.Location = game.WeaponInRoom.Location;
             if (game.WeaponInRoom.PickedUp)
             {
-                weaponControl.Visible = true;
+                weaponControl.Visible = false;
             }
             else
             {
-                weaponControl.Visible = false;
+                weaponControl.Visible = true;
             }
 
             //Did player die?
@@ -201,8 +201,15 @@ namespace TheQuest
             if (enemiesShown < 1)
             {
                 MessageBox.Show("You have defeated your enemies! Get ready for the next level!");
-                game.NewLevel(random);
-                UpdateCharacters();
+                bool next = game.NewLevel(random);
+                if(!next)
+                {
+                    Application.Exit();
+                }
+                else
+                {
+                    UpdateCharacters();
+                }
             }
         }
 
@@ -314,41 +321,49 @@ namespace TheQuest
         private void moveUp_Click(object sender, EventArgs e)
         {
             game.Move(Direction.Up, random);
+            UpdateCharacters();
         }
 
         private void moveRight_Click(object sender, EventArgs e)
         {
             game.Move(Direction.Right, random);
+            UpdateCharacters();
         }
 
         private void moveDown_Click(object sender, EventArgs e)
         {
             game.Move(Direction.Down, random);
+            UpdateCharacters();
         }
 
         private void moveLeft_Click(object sender, EventArgs e)
         {
             game.Move(Direction.Left, random);
+            UpdateCharacters();
         }
 
         private void attackUp_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.Up, random);
+            UpdateCharacters();
         }
 
         private void attackRight_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.Right, random);
+            UpdateCharacters();
         }
 
         private void attackDown_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.Down, random);
+            UpdateCharacters();
         }
 
         private void attackLeft_Click(object sender, EventArgs e)
         {
             game.Attack(Direction.Left, random);
+            UpdateCharacters();
         }
 
 

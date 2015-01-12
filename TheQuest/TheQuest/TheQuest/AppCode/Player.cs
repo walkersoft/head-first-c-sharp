@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace TheQuest
 {
@@ -38,7 +39,7 @@ namespace TheQuest
 
         public void IncreaseHealth(int health, Random random)
         {
-            HitPoints += random.Next(1, health);
+            HitPoints += random.Next(4, health);
         }
 
         public void Equip(string weaponName)
@@ -57,12 +58,31 @@ namespace TheQuest
             base.location = Move(direction, game.Boundaries);
             if (!game.WeaponInRoom.PickedUp)
             {
-                //see if weapon is nearby and possibly pick it up
+                if (Nearby(game.WeaponInRoom.Location, 25))
+                {
+                    game.WeaponInRoom.PickUpWeapon();
+                    inventory.Add(game.WeaponInRoom);
+                    //Equip(game.WeaponInRoom.Name);
+                }
+                
             }
         }
 
         public void Attack(Direction direction, Random random) 
-        { 
+        {
+            try
+            {
+                equippedWeapon.Attack(direction, random);
+                if (equippedWeapon is IPotion)
+                {
+                    inventory.Remove(equippedWeapon);
+                    equippedWeapon = null;
+                }
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("You must first equip a weapon before attacking.");
+            }
         }
     }
 }

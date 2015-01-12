@@ -13,7 +13,7 @@ namespace TheQuest.Weapons
         public Bow(Game game, Point location)
             : base(game, location)
         {
-            radius = 30;
+            radius = 150;
             damage = 1;
         }
         public override string Name

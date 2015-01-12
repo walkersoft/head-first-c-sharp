@@ -13,7 +13,7 @@ namespace TheQuest.Weapons
         public Mace(Game game, Point location)
             : base(game, location)
         {
-            radius = 20;
+            radius = 40;
             damage = 6;
         }
         public override string Name

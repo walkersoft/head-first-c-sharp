@@ -18,7 +18,19 @@ namespace TheQuest
 
         public override void Move(Random random)
         {
-            throw new NotImplementedException();
+            Direction direction = FindPlayerDirection(game.PlayerLocation);
+            if(HitPoints > 0)
+            {
+                if (random.Next(3) < 2)
+                {
+                    this.location = Move(direction, game.Boundaries);
+                }
+            }
+
+            if (NearPlayer() && !Dead)
+            {
+                game.HitPlayer(5, random);
+            }
         }
     }
 }
