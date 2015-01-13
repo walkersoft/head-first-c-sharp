@@ -1,0 +1,11 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Custom="http://schemas.microsoft.com/winfx/2006/xaml/presentation/ribbon" x:Class="WPFFun.MainWindow"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Custom:Ribbon HorizontalAlignment="Left" VerticalAlignment="Top" Height="146" Width="507"/>
+        <Custom:RibbonButton Label="Button"/>
+        <Custom:RibbonTab Header="Tab"/>
+    </Grid>
+</Window>
