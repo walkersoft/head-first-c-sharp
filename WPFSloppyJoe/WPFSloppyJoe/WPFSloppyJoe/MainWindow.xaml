@@ -15,7 +15,13 @@
                 </StackPanel>
                 <Button Content="Make a new menu" Margin="10,16,0,0" Click="Button_Click"/>
             </StackPanel>
-            <ListView ItemsSource="{Binding Menu}"/>
+            <ListView ItemsSource="{Binding Menu}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontFamily="Segoe Script"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
             <TextBlock>
                 <Run/>
                 <Run Text="{Binding GeneratedDate}"/>

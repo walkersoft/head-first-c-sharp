@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace WPFSloppyJoe
 {
-    class MenuMaker
+    class MenuMaker : INotifyPropertyChanged
     {
         //Sandwich goodies
         private List<String> meats = new List<String>()
@@ -46,11 +47,23 @@ namespace WPFSloppyJoe
                 Menu.Add(CreateMenuItem());
             }
             GeneratedDate = DateTime.Now;
+            OnPropertyChanged("GeneratedDate");
         }
 
         public MenuItem CreateMenuItem()
         {
             return new MenuItem(meats[random.Next(meats.Count)], condiments[random.Next(condiments.Count)], breads[random.Next(breads.Count)]);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler propertyChangedEvent = PropertyChanged;
+            if(propertyChangedEvent != null)
+            {
+                propertyChangedEvent(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }
